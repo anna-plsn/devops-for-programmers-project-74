@@ -5,9 +5,10 @@ Docker Compose используется для настройки окружен
 
 ## Требования
 docker
+
 docker compose V2
+
 make
-js-fastify-blog
 
 ## Образ
 Dockerhub - https://hub.docker.com/repository/docker/plsn/example-app
