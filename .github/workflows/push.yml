@@ -24,10 +24,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Create .env file
+        run: cp .env.example .env
 
       - name: Test
-        run: docker compose -f docker-compose.yml up --abort-on-container-exit -d  
-            
+        run: make test
+          
       - name: Build and Push App
         uses: docker/build-push-action@v3
         with:
