@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: bash -c 'sleep 3 && npm start'
-    env:
+    env_file:
       .env.example
     depends_on:
       - db
