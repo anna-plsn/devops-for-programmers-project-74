@@ -5,13 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 3000:8080
+      - 8080:8080
     volumes:
-      - ./app/:/app/
+      - ./app:/app
     command: bash -c 'sleep 3 && npm start'
   caddy:
     image: caddy
-    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
